@@ -1,7 +1,4 @@
-function add(n1, n2) {
-    return n1 + n2;
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
 }
-function printResult(num) {
-    console.log('Result: ' + num);
-}
-printResult(add(5, 12));
+generateError('An error occured', 500);
