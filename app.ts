@@ -1,19 +1,18 @@
+//Union type
 
-
-
-// enum Role { ADMIN, READ_ONLY, AUTHOR }//or
-enum Role { ADMIN = 5, READ_ONLY, AUTHOR }
-
-const person: {
-    name: string,
-    age: number,
-    hobbies: any,
+function combine(input1: number | string, input2: number | string) {
     
-} = {   //typescript infers what the object type is defined as
-    name: 'sid',
-    age: 30,
-    hobbies: ['sports', 'cooking'],
-    
+    let result
+    if (typeof input1 === 'number' && typeof input2 === 'number'){
+    result = input1 + input2
+    }else {
+        result = input1.toString() + input2.toString()
+    }
+    return result
 }
 
-person.hobbies = 2 // any type is allowed avoid whenever possible
+const combinedAges = combine(30, 26)
+console.log(combinedAges)
+
+const combinedNames = combine('Max', 'Anna')
+console.log(combinedNames)
